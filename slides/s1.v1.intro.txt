@@ -1,0 +1,48 @@
+
++---------------------------+                                                      +-----------------------------+
+|                           |            +---------------------------+             |                             |
+|        Computer A         |            |                           |             |          Computer B         |
+|                           |            |  THE DANGEROUS INTERNET   |             |                             |
+|                           |            |                           |             |                             |
+|          +------------<---------------------------------------------------------->------+------------+         |
+|          | SSH Client |   |          Encrypted secure shell connection           | PORT | SSH Server |         |
+|          | Program    |   |             -------------------------->              | 22   | program    |         |
+|          |            |   |             <--------------------------              |      |            |         |
+|          +------------<---------------------------------------------------------->------+------------+         |
+|                           |            |                           |             |                             |
+|                           |            +---------------------------+             |                             |
++---------------------------+                                                      +-----------------------------+
+
+
+<div class="slide">
+	<p class="headline">Hello world! This is HTML5 Boilerplate.</p>
+
+    <div class="slide-content" align="center">
+    	<pre>
++---------------------------+                                                      +-----------------------------+
+|                           |            +---------------------------+             |                             |
+|        Computer A         |            |                           |             |          Computer B         |
+|                           |            |  THE DANGEROUS INTERNET   |             |                             |
+|                           |            |                           |             |                             |
+|          +------------&lt;----------------------------------------------------------&gt;------+------------+         |
+|          | SSH Client |   |          Encrypted secure shell connection           | PORT | SSH Server |         |
+|          | Program    |   |             --------------------------&gt;              | 22   | program    |         |
+|          |            |   |             &lt;--------------------------              |      |            |         |
+|          +------------&lt;----------------------------------------------------------&gt;------+------------+         |
+|                           |            |                           |             |                             |
+|                           |            +---------------------------+             |                             |
++---------------------------+                                                      +-----------------------------+
+
+		</pre>
+		<div align="left">
+			<ul>	
+				<li>Verify SSH Client Program issss available:</li>
+				<li>Authentication </li>
+				<li>Encrypted communication</li>
+				<li>Pseudo-TeleTerminal allocation</li>
+				<li>Non-interactive command execution</li>
+			</ul>
+		</div>
+		 <button style="visibility : hidden;" onclick="myFunction()">-</button>  <!-- Insert this in with JS, possibly hide? -->
+    <div>
+</div>

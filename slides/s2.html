@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Your deck.js Presentation</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="deck/core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="deck/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="deck/themes/style/cmd.css">
+  <link rel="stylesheet" media="screen" href="udemy.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="deck/themes/transition/fade.css">
+
+  <!-- Required Modernizr file -->
+  <script src="deck/modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <section class="slide">
+      <h1>SSH: Zero to hero</h1>
+    </section>
+
+                          
+<section class="slide">
+  <h2>Hands on: SSH Basics</h2>
+  <!-- <div style="display:block;  border: 3px solid green; text-align:center;"> -->
+  <div style="display:block; text-align:center;">
+    <!-- <div style="display:inline-block;  border: 3px solid red; margin:auto;"> -->
+    <div style="display:inline-block; margin:auto;">
+
+<pre><code>                                                                 
+</code></pre>
+      <div class="slide-text">
+        What are we gonna do?
+        <ul style="text-align: left">    
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section class="slide">
+      <h2>The magic behind SSH</h2>
+      <div style="display:block;  border: 3px solid green; text-align:center;">
+      <!-- <div style="display:block; text-align:center;"> -->
+        <div style="display:inline-block;  border: 3px solid red; margin:auto;">
+        <!-- <div style="display:inline-block; margin:auto;"> -->
+
+<pre><code>
++---------------------------+                                                      +-----------------------------+
+|                           |            +---------------------------+             |                             |
+|        Computer A         |            |                           |             |          <span>Computer B</span>         |
+|                           |            |  THE DANGEROUS INTERNET   |             |                             |
+|                           |            |                           |             |                             |
+|          +------------&lt;----------------------------------------------------------&gt;------+------------+         |
+|          | SSH Client |   |          Encrypted secure shell connection           | PORT | SSH Server |         |
+|          | Program    |   |             --------------------------&gt;              | 22   | program    |         |
+|          |            |   |             &lt;--------------------------              |      |            |         |
+|          +------------&lt;----------------------------------------------------------&gt;------+------------+         |
+|                           |            |                           |             |                             |
+|                           |            +---------------------------+             |                             |
++---------------------------+                                                      +-----------------------------+
+</code></pre>
+
+      <ul style="text-align: left">  
+        <li>Client-Server architecture</li>
+        <li>Authentication</li>
+        <li>Encrypted communication</li>
+        <li>Pseudo-Terminal allocation</li>
+        <li>Port forwarding</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+                          
+<section class="slide">
+  <h2>Connecting to a server</h2>
+  <!-- <div style="display:block;  border: 3px solid green; text-align:center;"> -->
+  <div style="display:block; text-align:center;">
+    <!-- <div style="display:inline-block;  border: 3px solid red; margin:auto;"> -->
+    <div style="display:inline-block; margin:auto;">
+
+<pre><code>                                                                 
+</code></pre>
+      <div class="slide-text">
+        <ul style="text-align: left">    
+          <li>Verify SSH client is installed: <pre><code>ssh -V</code></pre></li>
+          <li>Connect to your server: <pre><code>ssh &lt;user&gt;@&lt;your_ip&gt;</code></pre></li>
+          <li>Try to run <pre><code>whoami</code></pre></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+
+<section class="slide">
+  <div class="slide-area">
+  <h2>Remote command execution and PTY</h2>
+      <div class="slide-content" style="height: 600px;">
+        <div class="slide-left">
+        <ul style="text-align: left" class="slide">    
+          <li>Plain SSH connection - PTY allocated<pre><code>ssh &lt;user&gt;@&lt;your_ip&gt;</code></pre></li>
+          <li>SSH command execution - No PTY <pre><code>ssh &lt;user&gt;@&lt;your_ip&gt; &lt;command&gt;</code></pre></li>
+        </ul>
+
+        <ul style="text-align: left"  class="slide">    
+          <li>Force enabled PTY<pre><code>ssh -t &lt;user&gt;@&lt;your_ip&gt; &lt;command&gt;</code></pre></li>
+          <li>Force disabled PTY<pre><code>ssh -T &lt;user&gt;@&lt;your_ip&gt;</code></pre></li>
+        </ul>
+      </div>
+
+      <div class="slide-right">
+        <div style="text-align: center; padding-bottom: 50px;">PTY = Pseudo Teletype</div>
+        <img src="asset/desktopterminal.png" style="width:65%;">
+      </div>
+
+    </div>
+</section>
+
+
+                         
+<section class="slide">
+  <div class="slide-area">
+  <h2>Download/Upload files: SCP</h2>
+      <div class="slide-content" style="overflow: hidden;">
+        <div class="slide-left">
+        <ul style="text-align: left">    
+          <li>Download files <pre><code>scp [-r] hostname:remote_path local_path</code></pre></li>
+          <li>Upload files <pre><code>scp [-r] local_path hostname:remote_path</code></pre></li>
+        </ul>
+      </div>
+    </div>
+</section>
+
+
+
+<section class="slide">
+  <div class="slide-area">
+  <h2>SSH Client escape sequences</h2>
+      <div class="slide-content" style="overflow: hidden;">
+        <div class="slide-left">
+        <ul style="text-align: left">    
+
+        </ul>
+      </div>
+    </div>
+</section>
+
+<section class="slide">
+  <div class="slide-area">
+  <h2>Logging and troubleshooting</h2>
+      <div class="slide-content" style="overflow: hidden;">
+        <div class="slide-left">
+        <ul style="text-align: left">    
+          <li>Logging options <pre><code>-v, -vv, -vvv</code></pre></li>
+          <li>Increase/Decrease logging on the fly using SSH Console</li>
+        </ul>
+      </div>
+    </div>
+</section>
+
+
+<section class="slide">
+  <div class="slide-area">
+  <h2>Terminating connection</h2>
+      <div class="slide-content" style="overflow: hidden;">
+        <div class="slide-left">
+        <ul style="text-align: left">    
+          <li>The safest way <pre><code>exit; or Ctrl+D</code></pre></li>
+          <li>Send SIGINT signal<pre><code>Ctrl+C</code></pre></li>
+          <li>SSH Client connection termination <pre><code>~.</code></pre></li>
+        </ul>
+      </div>
+    </div>
+</section>
+
+
+
+<section class="slide">
+  <div class="slide-area">
+  <h2>Useful man pages</h2>
+      <div class="slide-content" style="overflow: hidden;">
+        <div class="slide-left">
+        <ul style="text-align: left">    
+          <li>SSH Client manual: <pre><code>man ssh</code></pre></li>
+          <li>SSH Daemon manual: <pre><code>man sshd</code></pre></li>
+        </ul>
+      </div>
+    </div>
+</section>
+
+                          
+<section class="slide">
+  <h2>Section review</h2>
+  <!-- <div style="display:block;  border: 3px solid green; text-align:center;"> -->
+  <div style="display:block; text-align:center;">
+    <!-- <div style="display:inline-block;  border: 3px solid red; margin:auto;"> -->
+    <div style="display:inline-block; margin:auto;">
+
+<pre><code>                                                                 
+</code></pre>
+      <div class="slide-text">
+        <ul style="text-align: left">    
+          <li>SSH: Client-Server architecture</li>
+          <li>Client computer needs: SSH Client</li>
+          <li>Server needs to be running: SSH Daemon</li>
+          <li>Interactive SSH Session<pre><code>ssh &lt;user&gt;@&lt;your_ip&gt;</code></pre></li>
+          <li>Remote command execution<pre><code>ssh &lt;user&gt;@&lt;your_ip&gt; &lt;command&gt;</code></pre></li>
+          <li>Download/upload of files: SCP</li>
+          <li>SSH Client escape sequences</li>
+          <li>Set up logging</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+              
+<section class="slide">
+  <h2>Ahead next: The better way to authenticate </h2>
+</section>
+
+</div>  
+<!-- Required JS files. -->
+<script src="deck/jquery.min.js"></script>
+<script src="deck/core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="deck/extensions/menu/deck.menu.js"></script>
+<script src="deck/extensions/goto/deck.goto.js"></script>
+<script src="deck/extensions/status/deck.status.js"></script>
+<script src="deck/extensions/navigation/deck.navigation.js"></script>
+<script src="deck/extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>

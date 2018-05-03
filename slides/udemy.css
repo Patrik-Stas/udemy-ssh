@@ -1,0 +1,64 @@
+.highlight {
+	color:#af0;
+}
+
+.sideinfo {
+	color:#555;
+}
+
+.pros {
+	color:#af0;
+}
+
+.cons {
+	color:#ef5251;
+}
+
+
+h2 {
+	font-size: 3em;
+}
+
+.ascii-diagram {
+	font-size: 1.5em;
+}
+
+.slide-content {
+	text-align: left;
+	margin-top: 2em;
+	font-size: 1.4em;
+}
+
+.slide-area {
+	display:inline-block; 
+	/*border: 1px solid yellow; */
+	width:100%; 
+	margin-top:4%;
+	margin-bottom:4%;
+}
+
+.slide-left {
+	display: inline-block;  
+	/*border: 1px solid green;*/
+	height: 100%;
+	float:left;
+}
+
+.slide-right {
+	display:inline-block; 
+	/*border: 1px solid red;*/
+	max-width: 50%;
+	float:left;  
+	height: 100%;
+}
+
+.slide  {
+/*border: 1px solid gray; 	*/
+  text-align:center;
+}
+
+
+body {
+	height: 900;
+	width: 1400;
+}

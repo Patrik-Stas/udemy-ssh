@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Your deck.js Presentation</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="deck/core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="deck/extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="deck/extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="deck/themes/style/cmd.css">
+  <link rel="stylesheet" media="screen" href="udemy.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="deck/themes/transition/fade.css">
+
+  <!-- Required Modernizr file -->
+  <script src="deck/modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <section class="slide">
+      <h1>SSH: Zero to hero</h1>
+    </section>
+
+
+
+<section class="slide">
+  <div class="slide-area">
+  <h2>SSH</h2>
+      <div class="slide-content" style="height: 600px;">
+        <div class="slide-left">
+          <ul style="text-align: left">    
+          <li>is the <span class="highlight">fundamental</span> tool</li> <!-- Newbies -->
+          <li>can do <span class="highlight">more than you thought</span></li> <!-- Experienced -->
+          </ul>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+
+<section class="slide">
+  <div class="slide-area">
+  <h2>About the course</h2>
+      <div class="slide-content" style="height: 600px;">
+        <div class="slide-left">
+          <ul style="text-align: left">    
+            <li>OS neutral</li>    
+            <li>No skill assumptions made</li>
+            <li>Follows <span class="highlight">"learn by doing"</span> phillosophy</li>
+            <li>No server? No problem!</li> 
+            <li>Cheat-sheet available for every section</li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+<section class="slide">
+  <div class="slide-area">
+  <h2>Course coverage</h2>
+  <!-- <h2>This course</h2> -->
+      <div class="slide-content" style="height: 600px;">
+        <div class="slide-left">
+        <ul style="text-align: left">     
+          <li><span class="highlight">Virtual server setup </span><span class="sideinfo">(Section 1)</span></li> 
+          <ul>
+            <li>In cloud</li>
+            <li>Locally</li>
+          </ul> 
+          <li><span class="highlight">Fundamental topics </span><span class="sideinfo">(Section 2, 3, 4)</span></li> 
+          <ul>
+            <li>SSH Connection, remote execution</li>
+            <li>Authentication options</li>
+            <li>SSH Aliasing</li>
+            <li>Logging and troubleshooting</li>
+          </ul>
+        </ul>
+      </div>
+
+      <div class="slide-right">
+        <ul> 
+          <li><span class="highlight">Advanced topics </span><span class="sideinfo">(Section 5, 6, 7)</span></li> 
+          <ul>
+            <li>Local port forwarding</li>
+            <li>Remote port forwarding</li>
+            <li>SOCKS Proxy</li>
+            <li>GUI: (X11, XServer, Xnest)</li>
+            <li>Connection multiplexing</li>
+            <li>SSH File System</li>
+            <li>Jumpservers</li>
+            <li>SSH Security</li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="slide">
+  <div class="slide-area">
+  <h2>Running server: The options</h2>
+      <div class="slide-content" style="height: 600px;">
+
+        <div class="slide-left">
+          <ul style="text-align: left">
+            <li>On your localhost</li>
+            <ul>
+              <li class="pros">Free</li>
+              <li class="cons">More effort to set up</li>
+              <li class="cons">Need to download large file</li>
+              <li class="cons">Might slow dow computer</li>
+              <li class="cons">Further away from real use-case</li>
+            </ul>
+        </ul>
+        </div>
+
+      <div class="slide-right" style="float:center;">
+            <li>In cloud - <span class="highlight">recommended</span></li>
+            <ul>
+                <li class="pros">Simple to set up</li>
+                <li class="pros">Typical use-case</li>
+                <li class="cons">Costs 5$</li>
+            </ul>
+      </div>
+
+      </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="slide">
+  <div class="slide-area">
+  <h2>Running server: The options</h2>
+      <div class="slide-content" style="height: 600px;">
+        <div class="slide-left">
+          <ul style="text-align: left">    
+            <li>On your localhost</li>
+            <pre><code>
++------------------------+                   +----------------------------+
+|       Computer 1       |                   |         Computer 2         |
+|        (client)        |                   |          (server)          |
+|                        |                   |                            |
+|        +------------+  |                   +------------+               |
+|        |            |  |                   |            |               |
+|        | SSH Client ----------------------&gt;| SSH Daemon |               |
+|        |            |  |                   |            |               |
+|        +------------+  |                   +------------+               |
+|                        |                   |                            |
+|                        |                   |                            |
++------------------------+                   +----------------------------+
+          </ul>
+        </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+<section class="slide">
+      <h2>Creating server with DigitalOcean</h2>
+      <!-- <div style="display:block;  border: 3px solid green; text-align:center;"> -->
+      <div style="display:block; text-align:center;">
+        <!-- <div style="display:inline-block;  border: 3px solid red; margin:auto;"> -->
+        <div style="display:inline-block; margin:auto;">
+
+<pre><code>
+                                                                           
+</code></pre>
+        <div class="slide-text">
+          <ul style="text-align: left">  
+            <li>Client-Server architecture</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+
+    <section class="slide">
+      <h2>Option 1: Virtual server in cloud</h2>
+      <!-- <div style="display:block;  border: 3px solid green; text-align:center;"> -->
+      <div style="display:block; text-align:center;">
+        <!-- <div style="display:inline-block;  border: 3px solid red; margin:auto;"> -->
+        <div style="display:inline-block; margin:auto;">
+
+<pre><code>                                                                 
++------------------------+                   +----------------------------+
+|    Your computer       |                   |  Virtual Server in cloud   |
+|                        |                   |                            |
+|                        |                   |                            |
+|        +------------+  |                   +------------+               |
+|        |            |  |                   |            |               |
+|        | SSH Client ----------------------&gt;| SSH Daemon |               |
+|        |            |  |                   |            |               |
+|        +------------+  |                   +------------+               |
+|                        |                   |                            |
+|                        |                   |                            |
++------------------------+                   +----------------------------+
+                                               Public IP: xxx.yyy.zzz.www  
+</code></pre>
+        <div class="slide-text">
+          <ul style="text-align: left">  
+            <li>Pros:
+              <ul>
+                <li>simple to set up</li>
+                <li>typical use-case</li>
+                <li>recommended</li>
+              </ul>
+            </li>
+            <li>Cons:
+              <ul>
+                <li>costs 5$</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+    <section class="slide">
+      <h2>Option 2: Local virtual server</h2>
+      <!-- <div style="display:block;  border: 3px solid green; text-align:center;"> -->
+      <div style="display:block; text-align:center;">
+        <!-- <div style="display:inline-block;  border: 3px solid red; margin:auto;"> -->
+        <div style="display:inline-block; margin:auto;">
+
+<pre><code>
++-----------------------------------------------------------------------------------+
+|           Your computer                                                           |
+|                                    +------------------------------------------+   |
+|                                    |                VirtualBox                |   |
+|                                    |                                          |   |
+|                                    |     +------------------------------+     |   |
+|                                    |     |         Linux server         |     |   |
+|                                    |     |                              |     |   |
+|   +----------------+               |     +-------------+                |     |   |
+|   |                |               |     |             |                |     |   |
+|   |  SSH Client    |--------------------&gt;| SSH Daemon  |                |     |   |
+|   |                |               |     |             |                |     |   |
+|   +----------------+               |     +-------------+                |     |   |
+|                                    |     |                              |     |   |
+|                                    |     +------------------------------+     |   |
+|                                    |                                          |   |
+|                                    +------------------------------------------+   |
+|                                                                                   |
++-----------------------------------------------------------------------------------+
+</code></pre>
+      <div class="slide-text">
+        <ul style="text-align: left">  
+          <li>Pros:
+            <ul>
+              <li>free</li>
+            </ul>
+          </li>
+          <li>Cons:
+            <ul>
+              <li>More effort to set up</li>
+              <li>Further away from real use-case</li>
+              <li>Not suitable for slower computers</li>
+            </ul>
+          </li> 
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+                          
+<section class="slide">
+  <h2>Creating server with DigitalOcean</h2>
+  <!-- <div style="display:block;  border: 3px solid green; text-align:center;"> -->
+  <div style="display:block; text-align:center;">
+    <!-- <div style="display:inline-block;  border: 3px solid red; margin:auto;"> -->
+    <div style="display:inline-block; margin:auto;">
+
+<pre><code>                                                                 
+</code></pre>
+
+      <div class="slide-text">
+        <ul style="text-align: left">  
+          <li>Open https://www.digitalocean.com</li>
+          <li>Create new account</li>
+          <li>Sign in</li>
+          <li>Create new virtual server</li>
+          <li>Verify SSH connection</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+                          
+<section class="slide">
+  <h2>Creating server locally with Virtualbox</h2>
+  <!-- <div style="display:block;  border: 3px solid green; text-align:center;"> -->
+  <div style="display:block; text-align:center;">
+    <!-- <div style="display:inline-block;  border: 3px solid red; margin:auto;"> -->
+    <div style="display:inline-block; margin:auto;">
+
+<pre><code>                                                                 
+</code></pre>
+
+      <div class="slide-text">
+        <ul style="text-align: left">  
+          <li>Download virtualbox: https://www.virtualbox.org</li>
+          <li>Install virtualbox</li>
+          <li>Download minimal CentOS image: https://www.centos.org/download/</li>
+          <li>Create new Virtual Machine from the image</li>
+          <li>Install CentOS on Virtual Machine</li>
+          <li>Verify SSH connection</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+                 
+<section class="slide">
+  <h2>Mac/Linux: Preparing environment</h2>
+  <!-- <div style="display:block;  border: 3px solid green; text-align:center;"> -->
+  <div style="display:block; text-align:center;">
+    <!-- <div style="display:inline-block;  border: 3px solid red; margin:auto;"> -->
+    <div style="display:inline-block; margin:auto;">
+
+<pre><code>                                                                 
+</code></pre>
+
+      <div class="slide-text">
+        <ul style="text-align: left">  
+          <li>Verify SSH client is installed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+                          
+<section class="slide">
+  <h2>Windows: Preparing environment</h2>
+  <!-- <div style="display:block;  border: 3px solid green; text-align:center;"> -->
+  <div style="display:block; text-align:center;">
+    <!-- <div style="display:inline-block;  border: 3px solid red; margin:auto;"> -->
+    <div style="display:inline-block; margin:auto;">
+
+<pre><code>                                                                 
+</code></pre>
+
+      <div class="slide-text">
+        <ul style="text-align: left">    
+          <li>Why won't we use putty</li>
+          <li>Installation: Cygwin</li>
+          <ul>
+            <li>with package net.curl</li>
+            <li>with package net.openssh</li>
+          </ul>
+          <li>Installation: Notepad++</li>
+          <li>Cygwin: SSH Agent autostart</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+                          
+<section class="slide">
+  <h2>Section review</h2>
+  <!-- <div style="display:block;  border: 3px solid green; text-align:center;"> -->
+  <div style="display:block; text-align:center;">
+    <!-- <div style="display:inline-block;  border: 3px solid red; margin:auto;"> -->
+    <div style="display:inline-block; margin:auto;">
+
+<pre><code>                                                                 
+</code></pre>
+
+      <div class="slide-text">
+        <ul style="text-align: left">    
+          <li>SSH: Client-Server architecture</li>
+          <li>Client computer needs: SSH Client</li>
+          <li>Server needs to be running: SSH Daemon</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Required JS files. -->
+<script src="deck/jquery.min.js"></script>
+<script src="deck/core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="deck/extensions/menu/deck.menu.js"></script>
+<script src="deck/extensions/goto/deck.goto.js"></script>
+<script src="deck/extensions/status/deck.status.js"></script>
+<script src="deck/extensions/navigation/deck.navigation.js"></script>
+<script src="deck/extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>

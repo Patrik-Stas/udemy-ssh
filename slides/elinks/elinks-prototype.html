@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+	<meta charset="utf-8">
+	<style>
+	body {
+		background-color: black;
+	}
+	.headline {
+		text-align: center
+	}
+	.text {
+          color: white;
+	}
+
+	.next-slide {
+	   padding-bottom: 10cm;
+	}
+
+  .bottom-three {
+     margin-bottom: 1vh;
+  }
+	.data a, .data span, .data tr, .data td { white-space: pre; }
+</style>
+</head>
+<body>
+	<p class="headline">Hello world! This is HTML5 Boilerplate.</p>
+    <div class="text" align="center">
+    	<pre>
+    		<xmp>
++---------------------------+                                                      +-----------------------------+
+|                           |            +---------------------------+             |                             |
+|        Computer A         |            |                           |             |          Computer B         |
+|                           |            |  THE DANGEROUS INTERNET   |             |                             |
+|                           |            |                           |             |                             |
+|          +------------<---------------------------------------------------------->------+------------+         |
+|          | SSH Client |   |          Encrypted secure shell connection           | PORT | SSH Server |         |
+|          | Program    |   |             -------------------------->              | 22   | program    |         |
+|          |            |   |             <--------------------------              |      |            |         |
+|          +------------<---------------------------------------------------------->------+------------+         |
+|                           |            |                           |             |                             |
+|                           |            +---------------------------+             |                             |
++---------------------------+                                                      +-----------------------------+
+			</xmp>
+		</pre>
+		<div id="jstarget"></div>
+		<div align="left">
+			<ul>	
+				<li>Verify SSH Client Program issss available:</li>
+				<li>Authentication </li>
+				<li>Encrypted communication</li>
+				<li>Pseudo-TeleTerminal allocation</li>
+				<li>Non-interactive command execution</li>
+			</ul>
+		</div>
+		 <button onclick="myFunction()">-</button> 
+    <div>
+<code>
+
+
+<p class="bottom-three"></p>
+<p class="bottom-three"></p>
+
+
+	<p class="headline">Next slide name</p>
+    <div class="text" align="center">
+		<div align="left">
+			<ul>	
+				<li>Verify SSH Client Program issss available:</li>
+				<li>Authentication </li>
+				<li>Encrypted communication</li>
+				<li>Pseudo-TeleTerminal allocation</li>
+				<li>Non-interactive command execution</li>
+			</ul>
+		</div>
+		 <button onclick="myFunction()">-</button> 
+    <div>
+    	<script>
+    		var targetelem = document.getElementById("jstarget");
+
+    		document.onkeypress = function(evt) {
+			    evt = evt || window.event;
+			    var charCode = evt.keyCode || evt.which;
+			    var charStr = String.fromCharCode(charCode);
+			    targetelem.innerHTML = charStr
+			    console.log(charStr);
+			}
+
+			function myFunction() {
+			    targetelem.innerHTML = "pressed button"
+			}
+			// addEvent(document, "keypress", function (e) {
+			// var keynum;
+			//     if(window.event) { // IE                    
+			//       keynum = e.keyCode;
+			//     } else if(e.which){ // Netscape/Firefox/Opera                   
+			//       keynum = e.which;
+			//     }
+			//     console.log(String.fromCharCode(e));
+			// });
+
+			// function addEvent(element, eventName, callback) {
+			//     if (element.addEventListener) {
+			//         element.addEventListener(eventName, callback, false);
+			//     } else if (element.attachEvent) {
+			//         element.attachEvent("on" + eventName, callback);
+			//     } else {
+			//         element["on" + eventName] = callback;
+			//     }
+			// }
+
+
+    	</script>
+</body>
+</html>
